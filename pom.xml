@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>test</groupId>
+  <artifactId>WebApp</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <name>WebApp Maven Webapp</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+   <build>
+     <finalName>WebApp</finalName>
+       <plugins> 
+          <plugin> 
+             <groupId>org.apache.maven.plugins</groupId>
+             <artifactId>maven-antrun-plugin</artifactId>
+             <version>1.1</version> 
+             <executions> 
+               <execution> 
+                   <id>id.clean</id> 
+                   <phase>clean</phase> 
+                   <goals> 
+                   <goal>run</goal>
+                   </goals> 
+                   <configuration> 
+                   <tasks> 
+                      <echo>===========</echo> 
+                      <echo>Runnig Ant plugin</echo>
+                      <echo>===========</echo>
+                   </tasks> 
+                   </configuration>
+               </execution> 
+             </executions> 
+           </plugin> 
+           <plugin>
+             <groupId>org.codehaus.mojo</groupId>
+             <artifactId>exec-maven-plugin</artifactId>
+             <version>1.2.1</version>
+             <configuration>
+                 <executable>git</executable>
+                 <arguments>
+                   <argument>--version</argument>
+                 </arguments>
+             </configuration>
+           </plugin>
+           <plugin>
+             <groupId>org.jacoco</groupId>
+             <artifactId>jacoco-maven-plugin</artifactId>
+             <version>0.8.7</version>
+             <configuration>
+                <destFile>target/coverage-reports/jacoco-unit.exec</destFile>
+		        <dataFile>target/coverage-reports/jacoco-unit.exec</dataFile>
+             </configuration>
+             <executions>
+	           <execution>
+                 <id>jacoco-initialize</id>
+                 <goals>
+                   <goal>prepare-agent</goal>
+                 </goals>
+               </execution>
+               <execution>
+                 <id>jacoco-site</id>
+                 <phase>package</phase>
+                 <goals>
+                   <goal>report</goal>
+                 </goals>
+	           </execution>
+             </executions>
+           </plugin>
+		   <plugin>
+              <groupId>ord.codehaus.mojo</groupId>
+              <artifactId>sonar-maven-plugin</artifactId>
+              <version>3.9.0.2155</version>
+           </plugin>
+       </plugins>
+  </build>
+</project>
