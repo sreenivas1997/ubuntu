@@ -62,9 +62,6 @@
        <br><br> <input type="submit" value="Submit"><br><br>
         <input type="reset" value="Reset">
     </form>
+	<h1>****THANKYOU-VISIT AGAIN****</h1>
 </body>
-<<<<<<< HEAD
 </html> 
-=======
-</html> 
->>>>>>> 6475478 (updated)
