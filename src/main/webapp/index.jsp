@@ -3,8 +3,8 @@
     <title>HTML Submit and Reset Buttons</title>
 </head>
 <body align="center">
-<div style="background-color:silver;color:red;padding:2px;">
-  <h2>FILL YOUR DETAILS</h2>
+<div style="background-color:silver;color:red;padding:1px;">
+  <h1>FILL YOUR DETAILS</h1>
 <div style="background-color:black;padding:20px;">
 	<form action="meta.html" method="post" >
 <fieldset>
@@ -62,10 +62,7 @@
        <br><br> <input type="submit" value="Submit"><br><br>
         <input type="reset" value="Reset">
     </form>
-
-<div style="background-color:silver;color:red;padding:2px;">
+    </div>
   <h1>****THANKYOU-VISIT AGAIN****</h1>
-<div style="background-color:black;padding:20px;">
-	
 </body>
 </html> 
