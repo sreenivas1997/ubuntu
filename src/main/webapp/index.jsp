@@ -62,6 +62,10 @@
        <br><br> <input type="submit" value="Submit"><br><br>
         <input type="reset" value="Reset">
     </form>
-	<h1>****THANKYOU-VISIT AGAIN****</h1>
+
+<div style="background-color:silver;color:red;padding:2px;">
+  <h1>****THANKYOU-VISIT AGAIN****</h1>
+<div style="background-color:black;padding:20px;">
+	
 </body>
 </html> 
