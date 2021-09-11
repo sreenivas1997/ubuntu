@@ -1,56 +1,54 @@
-import java.util.Scanner;
+# Program make a simple calculator
 
-class Main {
-  public static void main(String[] args) {
+# This function adds two numbers
+def add(x, y):
+    return x + y
 
-    char operator;
-    Double number1, number2, result;
+# This function subtracts two numbers
+def subtract(x, y):
+    return x - y
 
-    // create an object of Scanner class
-    Scanner input = new Scanner(System.in);
+# This function multiplies two numbers
+def multiply(x, y):
+    return x * y
 
-    // ask users to enter operator
-    System.out.println("Choose an operator: +, -, *, or /");
-    operator = input.next().charAt(0);
+# This function divides two numbers
+def divide(x, y):
+    return x / y
 
-    // ask users to enter numbers
-    System.out.println("Enter first number");
-    number1 = input.nextDouble();
 
-    System.out.println("Enter second number");
-    number2 = input.nextDouble();
+print("Select operation.")
+print("1.Add")
+print("2.Subtract")
+print("3.Multiply")
+print("4.Divide")
 
-    switch (operator) {
+while True:
+    # take input from the user
+    choice = input("Enter choice(1/2/3/4): ")
 
-      // performs addition between numbers
-      case '+':
-        result = number1 + number2;
-        System.out.println(number1 + " + " + number2 + " = " + result);
-        break;
+    # check if choice is one of the four options
+    if choice in ('1', '2', '3', '4'):
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
 
-      // performs subtraction between numbers
-      case '-':
-        result = number1 - number2;
-        System.out.println(number1 + " - " + number2 + " = " + result);
-        break;
+        if choice == '1':
+            print(num1, "+", num2, "=", add(num1, num2))
 
-      // performs multiplication between numbers
-      case '*':
-        result = number1 * number2;
-        System.out.println(number1 + " * " + number2 + " = " + result);
-        break;
+        elif choice == '2':
+            print(num1, "-", num2, "=", subtract(num1, num2))
 
-      // performs division between numbers
-      case '/':
-        result = number1 / number2;
-        System.out.println(number1 + " / " + number2 + " = " + result);
-        break;
+        elif choice == '3':
+            print(num1, "*", num2, "=", multiply(num1, num2))
 
-      default:
-        System.out.println("Invalid operator!");
-        break;
-    }
-
-    input.close();
-  }
-}
+        elif choice == '4':
+            print(num1, "/", num2, "=", divide(num1, num2))
+        
+        # check if user wants another calculation
+        # break the while loop if answer is no
+        next_calculation = input("Let's do next calculation? (yes/no): ")
+        if next_calculation == "no":
+          break
+    
+    else:
+        print("Invalid Input")
