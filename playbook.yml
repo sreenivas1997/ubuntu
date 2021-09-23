@@ -1,0 +1,6 @@
+---
+- hosts: 192.168.174.135
+  become: yes
+  tasks:
+  - name: Installing git package
+    yum: name=git state=latest
